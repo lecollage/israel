@@ -23,6 +23,18 @@
     "noUnusedParameters": true,
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
-    "strictNullChecks": false
-  }
+    "strictNullChecks": false,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "bundles",
+    "**/*.js"
+  ]
 }

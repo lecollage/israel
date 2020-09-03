@@ -1,0 +1,136 @@
+@import "common";
+
+.programs {
+  margin: 130px 0 130px 0;
+  background: url("../img/programs-common-background.svg") right 0 no-repeat;
+}
+
+.programs__header {
+  text-align: left;
+  margin: 0 auto 90px auto;
+}
+
+.programs__nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.programs__nav input[type="radio"] {
+  display: none;
+}
+
+.programs__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.programs__content_header {
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  margin: 20px;
+}
+
+.programs__menu_item {
+  display: flex;
+  flex-direction: row;
+}
+
+.programs__menu_item:hover .programs__label {
+  color: #FFC341;
+}
+
+.programs__content_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  margin: 0 20px;
+  font-family: "Fira Sans", "Roboto", sans-serif;
+}
+
+.programs__label {
+  display: flex;
+  align-items: center;
+  width: 228px;
+  max-width: 228px;
+  height: 68px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.programs__input_radio + label {
+  padding: 0 10px;
+}
+
+.programs__input_radio:checked:hover + label {
+  color: #484848;
+}
+
+.programs__input_radio:checked + .programs__label {
+  background: url("../img/programs-menu-pointer-rectangle.svg") left 0 no-repeat;
+  color: #484848;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+.program__menu_item_icon {
+  width: 36px;
+  height: 36px;
+  overflow: hidden;
+  background: url("../img/programs-icons-sprite.svg") center 0 no-repeat;
+  margin: 0 5px;
+}
+
+// icons initial
+
+.program__menu_item_icon__common,
+.programs__input_radio:checked:hover + .programs__label .program__menu_item_icon__common {
+  background-position: 2px -44px;
+}
+
+.program__menu_item_icon__academic,
+.programs__input_radio:checked:hover + .programs__label .program__menu_item_icon__academic {
+  background-position: -44px -44px;
+}
+
+.program__menu_item_icon__internship,
+.programs__input_radio:checked:hover + .programs__label .program__menu_item_icon__internship {
+  background-position: -96px -48px;
+}
+
+.program__menu_item_icon__volunteer,
+.programs__input_radio:checked:hover + .programs__label .program__menu_item_icon__volunteer {
+  background-position: -142px -48px;
+}
+
+.program__menu_item_icon__religion,
+.programs__input_radio:checked:hover + .programs__label .program__menu_item_icon__religion {
+  background-position: -186px -48px;
+}
+
+// icons hover
+
+.programs__menu_item:hover .program__menu_item_icon__common {
+  background-position: 2px -88px;
+}
+
+.programs__menu_item:hover .program__menu_item_icon__academic {
+  background-position: -44px -88px;
+}
+
+.programs__menu_item:hover .program__menu_item_icon__internship {
+  background-position: -96px -92px;
+}
+
+.programs__menu_item:hover .program__menu_item_icon__volunteer {
+  background-position: -142px -92px;
+}
+
+.programs__menu_item:hover .program__menu_item_icon__religion {
+  background-position: -186px -92px;
+}

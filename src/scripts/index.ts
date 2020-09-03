@@ -1,14 +1,28 @@
-import '../styles/index.scss';
+import '../styles/common.scss';
+import '../styles/about-program.scss';
+import '../styles/footer.scss';
+import '../styles/header.scss';
+import '../styles/programs.scss';
 
-const list = ['name', 'start'];
+import {Programs} from '~/scripts/programs';
 
 class App {
-  public run(): void {
-    const version = 1;
-    console.log('started', version);
+    private programs: Programs = null;
 
-    list.map(item => console.log(item));
-  }
+    constructor() {
+        this.programs = new Programs();
+    }
+
+    public run(): void {
+        const version = 1;
+        console.log('started', version);
+
+        this.initApp();
+    }
+
+    private initApp() {
+        this.programs.initPrograms();
+    }
 }
 
 const app = new App();
