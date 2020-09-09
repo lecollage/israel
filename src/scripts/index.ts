@@ -3,6 +3,7 @@ import '../styles/about-program.scss';
 import '../styles/footer.scss';
 import '../styles/header.scss';
 import '../styles/programs.scss';
+import '../styles/want-to-go.scss';
 
 import {Programs} from '~/scripts/programs';
 
@@ -13,15 +14,12 @@ class App {
         this.programs = new Programs();
     }
 
-    public run(): void {
-        const version = 1;
-        console.log('started', version);
-
-        this.initApp();
+    public async run() {
+        await this.initApp();
     }
 
-    private initApp() {
-        this.programs.initPrograms();
+    private async initApp() {
+        await this.programs.initPrograms();
     }
 }
 

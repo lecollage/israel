@@ -7,19 +7,27 @@ export class Programs {
 
     }
 
-    public initPrograms() {
-        const programs: HTMLElement = document.getElementById('programs');
-        const buttonsCollection: HTMLCollectionOf<Element> = programs ? programs.getElementsByClassName(this.programsCommonClass) || null : null;
+    public initPrograms(): Promise<void> {
+        return new Promise<void>((resolve, reject) => {
+            try {
+                const programs: HTMLElement = document.getElementById('programs');
+                const buttonsCollection: HTMLCollectionOf<Element> = programs ? programs.getElementsByClassName(this.programsCommonClass) || null : null;
 
-        if (buttonsCollection) {
-            this.showInitialContent(buttonsCollection);
+                if (buttonsCollection) {
+                    this.showInitialContent(buttonsCollection);
 
-            for (let i = 0; i < buttonsCollection.length; i++) {
-                buttonsCollection[i].addEventListener('click', () => {
-                    this.showOnlyOneContent(buttonsCollection, i);
-                });
+                    for (let i = 0; i < buttonsCollection.length; i++) {
+                        buttonsCollection[i].addEventListener('click', () => {
+                            this.showOnlyOneContent(buttonsCollection, i);
+                        });
+                    }
+                }
+            } catch (err) {
+                reject(err);
             }
-        }
+
+            resolve();
+        });
     }
 
     private showInitialContent(buttonsCollection: HTMLCollectionOf<Element>) {

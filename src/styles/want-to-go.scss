@@ -1,0 +1,89 @@
+@import "common";
+
+.want-to-go {
+  margin: 0 0 130px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.want-to-go__text {
+
+}
+
+.want-to-go__header {
+
+}
+
+.want-to-go__backpack {
+  background: url("../img/want-to-go-backpack.png") left 0 no-repeat;
+  background-position-y: 70px;
+
+  width: 167px;
+  height: 500px;
+  align-self: center;
+}
+
+.want-to-go__girl {
+  width: 818px;
+  height: 594px;
+}
+
+.want-to-go__callback {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 594px;
+  background: url("../img/want-to-go-main-background.png") right top no-repeat;
+  background-size: 818px, 594px;
+
+  flex-grow: 1;
+}
+
+.want-to-go__form {
+  min-width: 477px;
+  width: 477px;
+}
+
+.want-to-go__inputs {
+  display: flex;
+  margin-top: 50px;
+}
+
+.want-to-go__phone_input {
+  width: 477px;
+  min-height: 59px;
+  border-radius: 80px;
+  border: $color-gray 3px solid;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: $font-size-h4;
+  line-height: 20px;
+  font-variant: small-caps;
+
+  color: #484848;
+  opacity: 0.5;
+
+  padding-left: 40px;
+}
+
+.want-to-go__button {
+  border-radius: 80px;
+  border-color: transparent;
+  min-width: 216px;
+  min-height: 59px;
+  padding: 10px;
+
+  background: linear-gradient(108.42deg, #FFC341 20.46%, #FFD701 65.31%);
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: $font-size-h4-m;
+  font-variant: small-caps;
+  color: #FFFFFF;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+
+  position: absolute;
+  margin-left: 265px;
+}

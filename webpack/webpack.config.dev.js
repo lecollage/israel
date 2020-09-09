@@ -10,7 +10,7 @@ module.exports = merge(common, {
     chunkFilename: 'js/[name].chunk.js'
   },
   devServer: {
-    port: 4200,
+    port: 9000,
     inline: true,
     overlay: true
   },
