@@ -1,0 +1,80 @@
+@import "common";
+
+.how-to-go {
+  display: flex;
+  flex-direction: row;
+  // justify-content: space-between;
+
+  background: url("../img/how-to-go-background.png") left top no-repeat;
+  background-size: 1366px 1208px;
+}
+
+.how-to-go__info {
+  display: flex;
+  flex-direction: row;
+
+  max-width: 552px;
+
+  background: url("../img/how-to-go-couple.png") left 0 no-repeat;
+}
+
+.how-to-go__empty {
+  min-width: 593px;
+  height: 707px;
+  //background: url("../img/how-to-go-couple.png") left 0 no-repeat;
+}
+
+.how-to-go__main {
+  min-width: 552px;
+  margin-left: 106px;
+}
+
+.how-to-go__header {
+
+}
+
+.how-to-go__text {
+  @include text__regular;
+  font-size: $font-size-regular-s;
+}
+
+.how-to-go__about-info {
+  @include text__bold;
+  font-size: $font-size-regular-m;
+}
+
+.how-to-go__list {
+  list-style-type: none;
+  counter-reset: section;
+  padding-inline-start: 0;
+
+  list-style-position: outside;
+}
+
+.how-to-go__list-item {
+  position: relative;
+
+  line-height: 36px;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 44px;
+
+}
+
+.how-to-go__list > li::before {
+  display: inline-block;
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  left: -1 * (24px + 36px);
+
+  counter-increment: section;
+  content: counters(section, "");
+
+  text-align: center;
+
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}

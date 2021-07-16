@@ -18,7 +18,7 @@ $font-size-h3-m: 24px;
 $font-size-h4: 21px;
 $font-size-h4-m: 18px;
 $font-size-regular-m: 17px;
-$font-size-regular-s: 14px;
+$font-size-regular-s: 15px;
 
 @font-face {
   font-family: "Fira Sans";
@@ -102,16 +102,20 @@ textarea {
   text-transform: uppercase;
   color: $color-lightblue;
   font-size: $font-size-h2;
-  // text-align: left;
-  // margin: 0 auto 90px auto;
 }
 
 .header__blue_h3 {
   font-family: "Montserrat", "Roboto", sans-serif;
   color: $color-lightblue;
   font-size: $font-size-h3;
-  // display: flex;
-  // justify-content: left;
-  // width: 100%;
-  // margin: 20px;
+}
+
+@mixin text__regular {
+  font-family: "Fira Sans", "Roboto", sans-serif;
+  color: $color-black;
+  opacity: 0.87;
+}
+
+@mixin text__bold {
+  font-weight: 500;
 }

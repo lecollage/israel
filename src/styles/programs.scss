@@ -47,7 +47,9 @@
   align-items: center;
   justify-content: left;
   margin: 0 20px;
-  font-family: "Fira Sans", "Roboto", sans-serif;
+  font-size: $font-size-regular-m;
+
+  @include text__regular;
 }
 
 .programs__label {

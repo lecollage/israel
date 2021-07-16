@@ -17,6 +17,12 @@ module.exports = {
             name: false
         }
     },
+    resolve: {
+        alias: {
+            '~': Path.resolve(__dirname, '../src')
+        },
+        extensions: [".ts", ".tsx", ".js"]
+    },
     plugins: [
         new CleanWebpackPlugin(['build'], {root: Path.resolve(__dirname, '..')}),
         new CopyWebpackPlugin([
@@ -26,12 +32,6 @@ module.exports = {
             template: Path.resolve(__dirname, '../src/index.html')
         })
     ],
-    resolve: {
-        alias: {
-            '~': Path.resolve(__dirname, '../src')
-        },
-        extensions: [".ts", ".tsx", ".js"]
-    },
     module: {
         rules: [
             {

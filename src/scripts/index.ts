@@ -4,6 +4,7 @@ import '../styles/footer.scss';
 import '../styles/header.scss';
 import '../styles/programs.scss';
 import '../styles/want-to-go.scss';
+import '../styles/how-to-go.scss';
 
 import {Programs} from '~/scripts/programs';
 
