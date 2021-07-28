@@ -2,88 +2,92 @@
 
 .programs {
   margin: 130px 0 50px 0;
+  padding: 20px;
   background: url("../img/programs-common-background.svg") right 0 no-repeat;
-}
 
-.programs__header {
-  text-align: left;
-  margin: 0 auto 90px auto;
-}
+  &__wrapper {
+    max-width: 70%;
+    margin: 0 auto;
+  }
 
-.programs__nav {
-  display: flex;
-  flex-direction: row;
-}
+  &__header {
+    text-align: left;
+    margin: 0 auto 90px auto;
+  }
 
-.programs__nav input[type="radio"] {
-  display: none;
-}
+  &__nav {
+    display: flex;
+    flex-direction: row;
+  }
 
-.programs__content {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
+  &__nav input[type="radio"] {
+    display: none;
+  }
 
-.programs__content_header {
-  display: flex;
-  justify-content: left;
-  width: 100%;
-  margin: 20px;
-}
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 
-.programs__menu_item {
-  display: flex;
-  flex-direction: row;
-}
+  &__content_header {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    margin: 20px;
+  }
 
-.programs__menu_item:hover .programs__label {
-  color: #FFC341;
-}
+  &__menu_item {
+    display: flex;
+    flex-direction: row;
+  }
 
-.programs__content_item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: left;
-  margin: 0 20px;
-  font-family: "Fira Sans", "Roboto", sans-serif;
-}
+  &__menu_item:hover &__label {
+    color: #FFC341;
+  }
 
-.programs__label {
-  display: flex;
-  align-items: center;
-  width: 228px;
-  max-width: 228px;
-  height: 68px;
-  text-align: left;
-  vertical-align: middle;
-}
+  &__content_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    margin: 0 20px;
+    font-size: $font-size-regular-m;
 
-.programs__input_radio + label {
-  padding: 0 10px;
-}
+    //@include text__regular;
+  }
 
-.programs__input_radio:checked:hover + label {
-  color: #484848;
-}
+  &__label {
+    display: flex;
+    align-items: center;
+    width: 228px;
+    max-width: 228px;
+    height: 68px;
+    text-align: left;
+    vertical-align: middle;
+  }
 
-.programs__input_radio:checked + .programs__label {
-  background: url("../img/programs-menu-pointer-rectangle.svg") left 0 no-repeat;
-  color: #484848;
-  font-weight: bold;
-}
+  &__input_radio + label {
+    padding: 0 10px;
+  }
 
-.hidden {
-  display: none;
-}
+  &__input_radio:checked:hover + label {
+    color: $color-black;
+  }
 
-.program__menu_item_icon {
-  width: 36px;
-  height: 36px;
-  overflow: hidden;
-  background: url("../img/programs-icons-sprite.svg") center 0 no-repeat;
-  margin: 0 5px;
+  &__input_radio:checked + &__label {
+    background: url("../img/programs-menu-pointer-rectangle.svg") left 0 no-repeat;
+    color: $color-black;
+    font-weight: bold;
+  }
+
+  &__menu_item_icon {
+    width: 36px;
+    height: 36px;
+    overflow: hidden;
+    background: url("../img/programs-icons-sprite.svg") center 0 no-repeat;
+    margin: 0 5px;
+  }
 }
 
 // icons initial
