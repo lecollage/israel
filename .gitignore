@@ -11,4 +11,4 @@ yarn.lock
 .vscode
 .idea
 
-build
+build/
