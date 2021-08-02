@@ -3,25 +3,11 @@
   "version": "1.0.0",
   "description": "A light foundation for your next frontend project based on webpack.",
   "scripts": {
-    "build": "webpack --config webpack/webpack.config.prod.js  --colors",
-    "start": "webpack-dev-server --open --config webpack/webpack.config.dev.js"
+    "build": "cross-env NODE_ENV=production webpack --mode production --config webpack/webpack.config.prod.js --colors",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --config webpack/webpack.config.dev.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/liveloper/webpack-typescript-sass-starter.git"
-  },
-  "keywords": [
-    "webpack",
-    "startkit",
-    "frontend",
-    "es6",
-    "typescript",
-    "javascript",
-    "sass",
-    "webdev"
-  ],
-  "author": "Sergey Lukovnikov",
-  "license": "MIT",
+  "author": "Eugene Kalashnikov",
+  "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
@@ -50,7 +36,8 @@
     "webpack": "^4.21.0",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.9",
-    "webpack-merge": "^4.1.4"
+    "webpack-merge": "^4.1.4",
+    "cross-env": "^6.0.3"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0"

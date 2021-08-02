@@ -4,7 +4,6 @@ export class Programs {
     private readonly contentInitShowIndex = 1;
 
     constructor() {
-
     }
 
     public initPrograms(): Promise<void> {
