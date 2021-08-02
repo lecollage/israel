@@ -60,14 +60,17 @@ module.exports = {
       },
       {
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)$/i,
-        loader: 'file-loader',
+        loader: 'file-loader?name=[path][name].[ext]',
         options: {
-          name: '[path][name].[ext]'
+          name: '[path][name].[ext]',
         }
       },
       {
         test: /\.html$/,
-        loader: 'html-loader'
+        loader: 'html-loader',
+        options: {
+          minimize: true,
+        },
       },
     ]
   }

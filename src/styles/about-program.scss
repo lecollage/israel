@@ -11,13 +11,12 @@
 
   &__text {
     margin: 0 auto;
-    padding: 0 10px;
-    text-align: left;
-    font-size: $font-size-regular-m;
     max-width: 720px;
+    text-align: center;
+    font-size: $font-size-regular-m;
 
-    @include for-size($desktop) {
-      text-align: center;
+    @include for-size($mobile) {
+      text-align: left;
     }
   }
 

@@ -1,0 +1,26 @@
+@import "common";
+
+$margin-right: 20px;
+$padding-header: 95px;
+
+.main {
+  display: block;
+  padding: 60px 0 0 0;
+
+  &__image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  &__tip-scroll-down {
+    position: absolute;
+    transform: translateY(160%);
+
+    @include for-size($tablet) {
+      transform: translateY(110%);
+    }
+  }
+}

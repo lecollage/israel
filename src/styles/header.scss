@@ -3,22 +3,15 @@
 $margin-right: 20px;
 $padding-header: 95px;
 
-.main-header {
+.header {
+  position: absolute;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
-  min-height: 650px;
-  background: url("../img/main-header-background-m.png") center center no-repeat;
-  background-position-y: 0;
-  background-size: 100%;
 
-  @include for-size($desktop-min) {
-    background-size: initial;
-    min-height: 906px;
-    background: url("../img/main-header-background-l.png") center center no-repeat;
-  }
-
-  &__main-nav {
+  &__nav {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -38,7 +31,7 @@ $padding-header: 95px;
     }
   }
 
-  &__main-nav > a {
+  &__nav > a {
     @include for-size($mobile) {
       font-size: $font-size-regular-s;
     }
@@ -64,7 +57,7 @@ $padding-header: 95px;
   }
 }
 
-.main-nav {
+.nav {
   &__logo {
     position: absolute;
     left: $margin-right;

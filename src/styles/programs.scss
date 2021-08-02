@@ -5,19 +5,25 @@
   padding: 20px;
   background: url("../img/programs-common-background.svg") right 0 no-repeat;
 
+  @include for-size($mobile) {
+    background: url("../img/programs-common-background.svg") center right no-repeat;
+  }
+
   &__wrapper {
-    max-width: 70%;
     margin: 0 auto;
   }
 
   &__header {
-    text-align: left;
-    margin: 0 auto 90px auto;
+    text-align: center;
   }
 
   &__nav {
     display: flex;
     flex-direction: row;
+
+    @include for-size($mobile) {
+      flex-direction: column;
+    }
   }
 
   &__nav input[type="radio"] {
@@ -37,6 +43,26 @@
     margin: 20px;
   }
 
+  &__menu {
+    display: flex;
+    flex-direction: column;
+
+    @include for-size($mobile) {
+      flex-direction: row;
+      overflow: auto;
+      font-size: $font-size-regular-m;
+
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+  }
+
+  &__menu::-webkit-scrollbar {
+    @include for-size($mobile) {
+      display: none;
+    }
+  }
+
   &__menu_item {
     display: flex;
     flex-direction: row;
@@ -54,7 +80,9 @@
     margin: 0 20px;
     font-size: $font-size-regular-m;
 
-    //@include text__regular;
+    @include for-size($mobile) {
+      margin: 0;
+    }
   }
 
   &__label {
@@ -65,10 +93,18 @@
     height: 68px;
     text-align: left;
     vertical-align: middle;
+
+    @include for-size($mobile) {
+      justify-content: center;
+    }
   }
 
   &__input_radio + label {
     padding: 0 10px;
+
+    @include for-size($mobile) {
+      padding: 0;
+    }
   }
 
   &__input_radio:checked:hover + label {
@@ -79,6 +115,10 @@
     background: url("../img/programs-menu-pointer-rectangle.svg") left 0 no-repeat;
     color: $color-black;
     font-weight: bold;
+
+    @include for-size($mobile) {
+      background: url("../img/programs-menu-pointer-circled-rectangle.svg") center center no-repeat;
+    }
   }
 
   &__menu_item_icon {
@@ -100,6 +140,10 @@
 .program__menu_item_icon__academic,
 .programs__input_radio:checked:hover + .programs__label .program__menu_item_icon__academic {
   background-position: -44px -44px;
+
+  @include for-size($mobile) {
+    background-position: -44px -42px;
+  }
 }
 
 .program__menu_item_icon__internship,

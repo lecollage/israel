@@ -7,22 +7,28 @@
     <title>Israel</title>
 </head>
 <body>
-<header class="main-header container">
-    <div class="main-header__main-nav">
-        <a href="tel:+797226216581" class="main-nav__phone text-black placeholder-button">+ (972) 2 – 621 – 6581</a>
-        <a class="main-nav__logo"><img src="img/logo.svg" alt="Israel"></a>
-        <a href="" class="main-nav__callback text-black placeholder-button">заказать звонок</a>
-    </div>
-    <div class="main-header__promo">
-        <h1 class="font-bold text-white font-promo">Учёба, путешествие и карьера<br>для еврейской молодёжи</h1>
-    </div>
-    <div class="main-header__tip-scroll-down">
-        <img src="./img/main-header-tip-scroll-down.svg" alt="Скролл вниз" class="tip-scroll-down__img">
+<header class="header container">
+    <div class="header__nav">
+        <a href="tel:+797226216581" class="nav__phone text-black placeholder-button">+ (972) 2 – 621 – 6581</a>
+        <a class="nav__logo"><img src="img/logo.svg" alt="Israel"></a>
+        <a href="" class="nav__callback text-black placeholder-button">заказать звонок</a>
     </div>
 </header>
 <main>
+    <section class="main container">
+        <div class="main__image">
+            <picture>
+                <source media="(max-width: 959px)" srcset="./img/main-m.png">
+                <source media="(min-width: 1360px)" srcset="./img/main-l.png">
+                <img src="./img/main-l.png" alt="a head carved out of wood">
+            </picture>
+            <div class="main__tip-scroll-down">
+                <img src="./img/main-tip-scroll-down.svg" alt="Скролл вниз">
+            </div>
+        </div>
+    </section>
     <section class="about-program container">
-        <h2 class="header__upper_blue_h2 about-program__header">о программе</h2>
+        <h1 class="header__upper_blue_h2 about-program__header">о программе</h1>
         <p class="about-program__text">
             &laquo;Маса&raquo;&nbsp;&mdash; совместный проект правительства Израиля и&nbsp;Еврейского агентства Сохнут. Более 250 учебных программ (60&nbsp;на русском) и&nbsp;возможность стажировки в&nbsp;Израиле. В&nbsp;течение освоения программ предусмотрен грант от&nbsp;4200 до&nbsp;8400$.
         </p>
@@ -33,41 +39,41 @@
     </section>
     <section class="programs container">
         <div class="programs__wrapper">
-            <h2 class="header__upper_blue_h2">программы</h2>
+            <h2 class="header__upper_blue_h2 programs__header">программы</h2>
             <div id="programs" class="programs__nav">
                 <div class="programs__menu">
                     <div class="programs__menu_item">
                         <input type="radio" name="navbar_menu_store" id="programs__input_1" class="programs__input_radio">
                         <label for="programs__input_1" class="programs__label">
-                            <span class="program__menu_item_icon program__menu_item_icon__common"></span>
+                            <span class="programs__menu_item_icon program__menu_item_icon__common"></span>
                             Общие
                         </label>
                     </div>
                     <div class="programs__menu_item">
                         <input type="radio" name="navbar_menu_store" id="programs__input_2" class="programs__input_radio">
                         <label for="programs__input_2" class="programs__label">
-                            <span class="program__menu_item_icon program__menu_item_icon__academic"></span>
+                            <span class="programs__menu_item_icon program__menu_item_icon__academic"></span>
                             Академические
                         </label>
                     </div>
                     <div class="programs__menu_item">
                         <input type="radio" name="navbar_menu_store" id="programs__input_3" class="programs__input_radio">
                         <label for="programs__input_3" class="programs__label">
-                            <span class="program__menu_item_icon program__menu_item_icon__internship"></span>
+                            <span class="programs__menu_item_icon program__menu_item_icon__internship"></span>
                             Стажировки
                         </label>
                     </div>
                     <div class="programs__menu_item">
                         <input type="radio" name="navbar_menu_store" id="programs__input_4" class="programs__input_radio">
                         <label for="programs__input_4" class="programs__label">
-                            <span class="program__menu_item_icon program__menu_item_icon__volunteer"></span>
+                            <span class="programs__menu_item_icon program__menu_item_icon__volunteer"></span>
                             Волонтёрство
                         </label>
                     </div>
                     <div class="programs__menu_item">
                         <input type="radio" name="navbar_menu_store" id="programs__input_5" class="programs__input_radio">
                         <label for="programs__input_5" class="programs__label">
-                            <span class="program__menu_item_icon program__menu_item_icon__religion"></span>
+                            <span class="programs__menu_item_icon program__menu_item_icon__religion"></span>
                             Религиозные
                         </label>
                     </div>
@@ -134,31 +140,36 @@
     <section class="want-to-go container">
         <div class="want-to-go__backpack"></div>
         <div class="want-to-go__callback">
-            <div class="want-to-go__form">
+            <form class="want-to-go__form">
                 <h2 class="want-to-go__header header__upper_blue_h2">хочу поехать!</h2>
                 <div class="want-to-go__text">Оставьте свой телефон и мы свяжемся с вами, подберём куратора и ответим на
                     все вопросы!
                 </div>
                 <div class="want-to-go__inputs">
-                    <input type="text" class="want-to-go__phone_input" value="телефон"/>
+                    <input type="text" class="want-to-go__phone_input" placeholder="телефон"/>
                     <button class="want-to-go__button">перезвоните мне</button>
                 </div>
+            </form>
+            <div class="want-to-go__background">
+                <img src="./img/want-to-go-main-background.png" alt="Хочу поехать">
             </div>
         </div>
     </section>
     <section class="how-to-go container">
         <div class="how-to-go__info">
-            <div class="how-to-go__empty"></div>
+            <div class="how-to-go__picture">
+                <img src="./img/how-to-go.png" alt="Как поехать">
+            </div>
             <div class="how-to-go__main">
                 <h2 class="how-to-go__header header__upper_blue_h2">как поехать</h2>
                 <p class="how-to-go__text">
                     Чтобы узнать подробнее о программе, свяжитесь с координатором в вашем городе. Вы получите актуальные
                     сведения о доступных программах и городах, в которых можете пройти программу.
                 </p>
-                <p class="how-to-go__about-info">
+                <p class="how-to-go__about-info font-bold">
                     Чтобы иметь возможность получить грант на обучение от 4200 до 8400$, вы должны:
                 </p>
-                <ul class="how-to-go__list">
+                <ol class="how-to-go__list">
                     <li class="how-to-go__list-item">
                         Быть в возрасте от 16 до 30 лет
                     </li>
@@ -171,7 +182,11 @@
                     <li class="how-to-go__list-item">
                         За последние 2 года быть не больше 3х месяцев подряд непрерывно в Израиле.
                     </li>
-                </ul>
+                </ol>
+                <p class="how-to-go__another-possibility">
+                    Если вы не подходите по этим правилам, вы всё равно можете
+                    принять участие в программе «Маса», оплатив её полную стоимость.
+                </p>
             </div>
         </div>
     </section>

@@ -1,5 +1,6 @@
 $color-real-black: #000000;
 $color-black: #484848;
+$color-black-20: rgba(72, 72, 72, 0.2);
 $color-white: #ffffff;
 $color-light-gray: #E3E3E3;
 $color-gray: #c1c1c1;
@@ -60,8 +61,8 @@ $font-size-h3: 28px;
 $font-size-h3-m: 24px;
 $font-size-h4: 21px;
 $font-size-h4-m: 18px;
-$font-size-regular-m: 17px;
-$font-size-regular-s: 15px;
+$font-size-regular-m: 16px;
+$font-size-regular-s: 14px;
 $font-promo: 24px;
 $font-promo-m: 20px;
 
@@ -207,4 +208,8 @@ textarea {
 
 .hidden {
   display: none;
+}
+
+@mixin text__regular {
+  color: $color-black;
 }

@@ -30,7 +30,7 @@ module.exports = merge(common, {
     }),
     new Webpack.optimize.ModuleConcatenationPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'styles/bundle.[hash].css'
+      filename: 'bundle.[hash].css'
     })
   ],
   module: {
