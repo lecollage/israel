@@ -3,6 +3,12 @@
 $common-margin: 36px;
 
 .how-to-go {
+  background: url("../img/how-to-go-stamp.png") 110% center no-repeat;
+
+  @include for-size($mobile) {
+    background-position-x: 180%;
+  }
+
   &__info {
     display: flex;
     flex-direction: row;
@@ -11,16 +17,19 @@ $common-margin: 36px;
   }
 
   &__picture {
+    flex: 1 1 auto;
+
     @include for-size($tablet) {
       display: none;
     }
   }
 
   &__main {
-    margin: 0 20px 0 110px;
+    flex: 1 2 auto;
+    margin: 0 20px 0 20px;
 
-    @include for-size($tablet) {
-      margin: 0 20px 0 20px;
+    @include for-size($desktop-large-min) {
+      margin: 0 20px 0 110px;
     }
   }
 
@@ -56,13 +65,6 @@ $common-margin: 36px;
     counter-increment: my-awesome-counter;
     position: relative;
 
-    //&:not(:last-child) {
-    //  &::after {
-    //    border: 1px solid green;
-    //  }
-    //}
-
-
     &::before {
       position: absolute;
       content: counter(my-awesome-counter);
@@ -94,7 +96,6 @@ $common-margin: 36px;
   &__another-possibility {
     position: relative;
     opacity: 50%;
-
     padding-left: 20px;
 
     &::before {
@@ -103,9 +104,9 @@ $common-margin: 36px;
       height: 100%;
       transform: translateX(-20px);
 
-      border: 4px solid;
+      border-left: 4px solid;
       border-image-slice: 1;
-      border-image-source: linear-gradient(to left, #FFC341, #FFD701);
+      border-image-source: linear-gradient(to right, $color-yellow, $color-yellow-light);
     }
   }
 }

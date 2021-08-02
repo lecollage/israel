@@ -4,6 +4,14 @@
   padding: 20px;
   width: 100%;
 
+  background: url("../img/about-program-watercolor-background.png") center center no-repeat;
+  background-size: 1366px 604px;
+
+  @include for-size($mobile) {
+    background: url("../img/about-program-watercolor-background.png") 90% 40% no-repeat;
+    background-size: 420px 186px;
+  }
+
   &__header {
     text-align: center;
     margin: 0 auto 30px auto;
@@ -22,8 +30,6 @@
 
   &__video-container {
     position: relative;
-    background: url("../img/about-program-watercolor-background.png") center center no-repeat;
-    background-size: 1366px 604px;
     display: flex;
     justify-content: center;
     align-items: center;

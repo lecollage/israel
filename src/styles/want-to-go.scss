@@ -5,8 +5,6 @@
   flex-direction: row;
   justify-content: space-between;
 
-
-
   &__text {
     max-width: 400px;
     @include text__regular;
@@ -24,6 +22,7 @@
   }
 
   &__backpack {
+    display: none;
     background: url("../img/want-to-go-backpack.png") left 0 no-repeat;
     background-position-y: 70px;
 
@@ -32,10 +31,15 @@
     align-self: center;
 
     @include for-size($tablet) {
+      display: block;
       position: absolute;
       left: 0;
       background-position-y: 0;
       transform: translateY(-50px);
+    }
+
+    @include for-size($desktop-large-min) {
+      display: block;
     }
   }
 
@@ -66,14 +70,14 @@
     flex:1;
 
     justify-content: center;
-    max-width: 818px;
+    //min-width: 818px;
 
     & > img {
-      @include for-size($mobile) {
+      @include for-size($tablet) {
         width: 100%;
       }
 
-      @include for-size($desktop-large-min) {
+      @include for-size($desktop-min) {
         display: none;
       }
     }
