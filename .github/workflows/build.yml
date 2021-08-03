@@ -15,3 +15,4 @@ jobs:
           ls -la
           npm install
           npm run build
+          ls -la
