@@ -2,90 +2,132 @@
 
 .programs {
   margin: 130px 0 50px 0;
+  padding: 20px;
   background: url("../img/programs-common-background.svg") right 0 no-repeat;
-}
 
-.programs__header {
-  text-align: left;
-  margin: 0 auto 90px auto;
-}
+  @include for-size($mobile) {
+    background: url("../img/programs-common-background.svg") center right no-repeat;
+  }
 
-.programs__nav {
-  display: flex;
-  flex-direction: row;
-}
+  &__wrapper {
+    margin: 0 auto;
+  }
 
-.programs__nav input[type="radio"] {
-  display: none;
-}
+  &__header {
+    text-align: center;
+  }
 
-.programs__content {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
+  &__nav {
+    display: flex;
+    flex-direction: row;
 
-.programs__content_header {
-  display: flex;
-  justify-content: left;
-  width: 100%;
-  margin: 20px;
-}
+    @include for-size($mobile) {
+      flex-direction: column;
+    }
+  }
 
-.programs__menu_item {
-  display: flex;
-  flex-direction: row;
-}
+  &__nav input[type="radio"] {
+    display: none;
+  }
 
-.programs__menu_item:hover .programs__label {
-  color: #FFC341;
-}
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 
-.programs__content_item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: left;
-  margin: 0 20px;
-  font-size: $font-size-regular-m;
+  &__content_header {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    margin: 20px;
+  }
 
-  @include text__regular;
-}
+  &__menu {
+    display: flex;
+    flex-direction: column;
 
-.programs__label {
-  display: flex;
-  align-items: center;
-  width: 228px;
-  max-width: 228px;
-  height: 68px;
-  text-align: left;
-  vertical-align: middle;
-}
+    @include for-size($mobile) {
+      flex-direction: row;
+      overflow: auto;
+      font-size: $font-size-regular-m;
 
-.programs__input_radio + label {
-  padding: 0 10px;
-}
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+  }
 
-.programs__input_radio:checked:hover + label {
-  color: #484848;
-}
+  &__menu::-webkit-scrollbar {
+    @include for-size($mobile) {
+      display: none;
+    }
+  }
 
-.programs__input_radio:checked + .programs__label {
-  background: url("../img/programs-menu-pointer-rectangle.svg") left 0 no-repeat;
-  color: #484848;
-  font-weight: bold;
-}
+  &__menu_item {
+    display: flex;
+    flex-direction: row;
+  }
 
-.hidden {
-  display: none;
-}
+  &__menu_item:hover &__label {
+    color: #FFC341;
+  }
 
-.program__menu_item_icon {
-  width: 36px;
-  height: 36px;
-  overflow: hidden;
-  background: url("../img/programs-icons-sprite.svg") center 0 no-repeat;
-  margin: 0 5px;
+  &__content_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    margin: 0 20px;
+    font-size: $font-size-regular-m;
+
+    @include for-size($mobile) {
+      margin: 0;
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    width: 228px;
+    max-width: 228px;
+    height: 68px;
+    text-align: left;
+    vertical-align: middle;
+
+    @include for-size($mobile) {
+      justify-content: center;
+    }
+  }
+
+  &__input_radio + label {
+    padding: 0 10px;
+
+    @include for-size($mobile) {
+      padding: 0;
+    }
+  }
+
+  &__input_radio:checked:hover + label {
+    color: $color-black;
+  }
+
+  &__input_radio:checked + &__label {
+    background: url("../img/programs-menu-pointer-rectangle.svg") left 0 no-repeat;
+    color: $color-black;
+    font-weight: bold;
+
+    @include for-size($mobile) {
+      background: url("../img/programs-menu-pointer-circled-rectangle.svg") center center no-repeat;
+    }
+  }
+
+  &__menu_item_icon {
+    width: 36px;
+    height: 36px;
+    overflow: hidden;
+    background: url("../img/programs-icons-sprite.svg") center 0 no-repeat;
+    margin: 0 5px;
+  }
 }
 
 // icons initial
@@ -98,6 +140,10 @@
 .program__menu_item_icon__academic,
 .programs__input_radio:checked:hover + .programs__label .program__menu_item_icon__academic {
   background-position: -44px -44px;
+
+  @include for-size($mobile) {
+    background-position: -44px -42px;
+  }
 }
 
 .program__menu_item_icon__internship,

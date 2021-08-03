@@ -1,13 +1,59 @@
+$color-real-black: #000000;
 $color-black: #484848;
+$color-black-20: rgba(72, 72, 72, 0.2);
 $color-white: #ffffff;
 $color-light-gray: #E3E3E3;
 $color-gray: #c1c1c1;
 $color-lightblue: #1fc0fc;
+$color-yellow: #FFC341;
+$color-yellow-light: #FFD701;
 
 $size-s: 320px;
 $size-xs: 510px;
 $size-m: 768px;
 $size-l: 1024px;
+
+$mobile: 'mobile';
+$mobile-min: 'mobile-min';
+$mobile-interval: 'mobile-interval';
+
+$tablet: 'tablet';
+$tablet-min: 'tablet-min';
+$tablet-interval: 'tablet-interval';
+
+$desktop: 'desktop';
+$desktop-min: 'desktop-min';
+$desktop-interval: 'desktop-interval';
+
+$desktop-large-min: 'desktop-lg-min';
+
+@mixin for-size($size) {
+  @if $size == $mobile {
+    @media (max-width: 639px) { @content; }
+  } @else if $size == $mobile-interval {
+    @media (min-width: 480px) and (max-width: 639px) { @content; }
+  }
+
+  @else if $size == $tablet {
+    @media (max-width: 959px) { @content; }
+  } @else if $size == $tablet-min {
+    @media (min-width: 640px) { @content; }
+  } @else if $size == $tablet-interval {
+    @media (min-width: 640px) and (max-width: 959px) { @content; }
+  }
+
+  @else if $size == $desktop {
+    @media (max-width: 1359px) { @content; }
+  } @else if $size == $desktop-min {
+    @media (min-width: 960px) { @content; }
+  } @else if $size == $desktop-interval {
+    @media (min-width: 960px) and (max-width: 1359px) { @content; }
+  }
+
+  @else if $size == $desktop-large-min {
+    @media (min-width: 1360px) { @content; }
+  }
+}
 
 $font-size-h1: 200px;
 $font-size-h1-m: 72px;
@@ -17,8 +63,10 @@ $font-size-h3: 28px;
 $font-size-h3-m: 24px;
 $font-size-h4: 21px;
 $font-size-h4-m: 18px;
-$font-size-regular-m: 17px;
-$font-size-regular-s: 15px;
+$font-size-regular-m: 16px;
+$font-size-regular-s: 14px;
+$font-promo: 24px;
+$font-promo-m: 20px;
 
 @font-face {
   font-family: "Fira Sans";
@@ -67,9 +115,7 @@ body {
   line-height: 150%;
   background-color: $color-white;
   min-width: 320px;
-  max-width: 1366px;
   color: #303030;
-  margin: 0 auto;
 }
 
 *,
@@ -97,11 +143,26 @@ textarea {
   display: none;
 }
 
+.header__upper_h1 {
+  font-family: "Montserrat", "Roboto", sans-serif;
+  text-transform: uppercase;
+  color: $color-lightblue;
+  font-size: $font-size-h1-m;
+
+  @include for-size($desktop-min) {
+    font-size: $font-size-h1;
+  }
+}
+
 .header__upper_blue_h2 {
   font-family: "Montserrat", "Roboto", sans-serif;
   text-transform: uppercase;
   color: $color-lightblue;
-  font-size: $font-size-h2;
+  font-size: $font-size-h2-m;
+
+  @include for-size($desktop-min) {
+    font-size: $font-size-h2;
+  }
 }
 
 .header__blue_h3 {
@@ -110,12 +171,47 @@ textarea {
   font-size: $font-size-h3;
 }
 
-@mixin text__regular {
-  font-family: "Fira Sans", "Roboto", sans-serif;
-  color: $color-black;
-  opacity: 0.87;
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+
+  @include for-size($desktop-min) {
+    max-width: 1366px;
+  }
 }
 
-@mixin text__bold {
-  font-weight: 500;
+.text-black {
+  color: $color-real-black;
+}
+
+.text-gray {
+  color: $color-black;
+}
+
+.text-white {
+  color: $color-white;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.font-promo {
+  font-size: $font-promo-m;
+
+  @include for-size($desktop-min) {
+    font-size: $font-promo;
+  }
+}
+
+.opacity-medium {
+  opacity: 0.5;
+}
+
+.hidden {
+  display: none;
+}
+
+@mixin text__regular {
+  color: $color-black;
 }
