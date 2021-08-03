@@ -13,4 +13,4 @@ jobs:
         run: |
           npm install
           npm run build
-        working-directory: israel
+        working-directory: ./israel
