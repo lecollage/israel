@@ -1,21 +1,11 @@
-import '../styles/common.scss';
-import '../styles/main.scss';
-import '../styles/about-program.scss';
-import '../styles/footer.scss';
-import '../styles/header.scss';
-import '../styles/programs.scss';
-import '../styles/want-to-go.scss';
-import '../styles/how-to-go.scss';
-import '../styles/life-in-israel.scss';
-
 import {Programs} from '~/scripts/programs';
+import {Slider} from '~/scripts/slider';
 
 class App {
-    private programs: Programs = null;
+    private readonly programs: Programs = new Programs();
+    private readonly slider: Slider = new Slider();
 
-    constructor() {
-        this.programs = new Programs();
-    }
+    constructor() {}
 
     public async run() {
         await this.initApp();
@@ -23,6 +13,7 @@ class App {
 
     private async initApp() {
         await this.programs.initPrograms();
+        await this.slider.initSlider();
     }
 }
 
