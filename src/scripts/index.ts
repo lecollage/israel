@@ -1,11 +1,11 @@
 import {Programs} from '~/scripts/programs';
+import {Slider} from '~/scripts/slider';
 
 class App {
-    private programs: Programs = null;
+    private readonly programs: Programs = new Programs();
+    private readonly slider: Slider = new Slider();
 
-    constructor() {
-        this.programs = new Programs();
-    }
+    constructor() {}
 
     public async run() {
         await this.initApp();
@@ -13,6 +13,7 @@ class App {
 
     private async initApp() {
         await this.programs.initPrograms();
+        await this.slider.initSlider();
     }
 }
 
