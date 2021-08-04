@@ -1,5 +1,46 @@
 @import "common";
 
 .life-in-israel {
+  background: url("../img/life-in-israel-bg.png") no-repeat -10px -100px,
+  url("../img/life-in-israel-bg-watch.png") no-repeat 101% 75%;
+
+  &__wrapper {
+    margin: 0 auto;
+    max-width: 1152px;
+  }
+
+  &__header {
+    text-align: center;
+    margin-top: 110px;
+  }
+
+  &__text {
+    max-width: 760px;
+    text-align: center;
+    margin: 0 auto;
+    z-index: 2;
+  }
+
+  &__gallery {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+  }
+
+  &__main-photo {
+    transform: translateY(-20px);
+    z-index: 1;
+  }
+
+  &__photos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 35px;
+  }
+
+  &__photo {
+  }
 }
 
