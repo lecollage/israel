@@ -13,7 +13,7 @@ class App {
 
     private async initApp() {
         await this.programs.initPrograms();
-        await this.slider.initSlider();
+        this.slider.initSlider();
     }
 }
 
