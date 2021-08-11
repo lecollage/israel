@@ -1,0 +1,97 @@
+@import "common";
+
+.masaisrael {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  margin-top: 110px;
+  background: url("../img/masaisrael-bg.png") no-repeat center center;
+  min-height: 583px;
+
+  @include for-size($tablet) {
+    background: url("../img/masaisrael-bg.png") no-repeat left center;
+    align-items: flex-end;
+  }
+
+  @include for-size($mobile) {
+    background: none;
+    justify-content: center;
+    min-height: initial;
+  }
+
+  &__wrapper {
+    margin-right: 100px;
+    padding-bottom: 150px;
+
+    @include for-size($tablet) {
+      margin-right: 20px;
+      padding-bottom: 70px;
+    }
+
+    @include for-size($mobile) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      margin-right: initial;
+    }
+  }
+
+  &__header {
+    text-align: left;
+
+    @include for-size($mobile) {
+      text-align: center;
+    }
+  }
+
+  &__text-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 420px;
+
+    @include for-size($tablet) {
+      max-width: 320px;
+    }
+
+    @include for-size($mobile) {
+      background: url("../img/masaisrael-bg-small.png") no-repeat left/cover;
+      background-position-x: -40px;
+      max-width: initial;
+      min-height: 272px;
+    }
+  }
+
+  &__text {
+    padding-top: 40px;
+    margin: 0 25px;
+    color: $color-white;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 48px;
+
+    @include for-size($mobile) {
+      margin: 20px;
+    }
+
+    &-icon {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin: 0 10px;
+      background: url("../img/masaisrael-icon.svg");
+    }
+
+    &-text {
+      display: inline-block;
+    }
+  }
+}
