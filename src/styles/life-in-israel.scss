@@ -1,6 +1,8 @@
 @import "common";
 
 .life-in-israel {
+  margin-top: 110px;
+
   background: url("../img/life-in-israel-bg.png") no-repeat -10px -100px,
   url("../img/life-in-israel-bg-watch.png") no-repeat 101% 75%;
 
@@ -15,7 +17,6 @@
 
   &__header {
     text-align: center;
-    margin-top: 110px;
   }
 
   &__text {
@@ -23,6 +24,14 @@
     text-align: center;
     margin: 0 auto;
     z-index: 2;
+
+    @include for-size($tablet) {
+      margin: 0 20px;
+    }
+
+    @include for-size($mobile) {
+      text-align: left;
+    }
   }
 
   &__gallery {
