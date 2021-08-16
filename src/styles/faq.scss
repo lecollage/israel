@@ -1,0 +1,149 @@
+@import "common";
+
+.faq {
+  margin-top: 110px;
+
+  input[type="radio"] {
+    display: none;
+  }
+}
+
+.faq__wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.faq__accordeon-wrapper {
+  margin: 0 50px;
+
+  @include for-size($desktop-large-min) {
+    margin: 0 50px 0 110px;
+  }
+
+  @include for-size($mobile) {
+    margin: 0 20px;
+  }
+
+  & ol {
+    counter-reset: faq;
+    list-style: none;
+    //list-style-type: none;
+
+    @include for-size($mobile) {
+      padding-left: 0;
+    }
+
+    & li {
+      counter-increment: faq;
+      //border: 1px solid green;
+    }
+
+    & li::before {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+      content: counter(faq);
+      min-height: 72px;
+    }
+  }
+}
+
+.faq__accordeon {
+  counter-reset: counter;
+  list-style: none;
+}
+
+.faq__element {
+  margin-top: 10px;
+  border-bottom: 1px solid $color-black-20;
+
+}
+
+.faq__element-open {
+  &:not(:checked) ~ .faq__element-header {
+    .faq__element-title--open {
+      display: block;
+    }
+
+    .faq__element-title--close {
+      display: none;
+    }
+  }
+
+  &:not(:checked) ~ .faq__element-content {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  &:checked ~ .faq__element-header {
+    .faq__element-title--open {
+      display: none;
+    }
+
+    .faq__element-title--close {
+      display: block;
+    }
+  }
+
+  &:checked ~ .faq__element-content {
+    //height: 200px;
+    opacity: 1;
+    overflow: auto;
+  }
+}
+
+.faq__element-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding-left: 20px;
+  min-height: 72px;
+
+}
+
+.faq__element-title {
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: background-color .25s ease;
+
+  .faq__icon {
+    margin-right: 10px;
+  }
+
+  //&:hover, &.faq__element-title--close {
+  //  background-color: darken(#018ee6, 10);
+  //}
+}
+
+.faq__element-title--open {
+}
+
+.faq__icon {
+}
+
+.faq__icon--plus {
+}
+
+.faq__element-title--close {
+}
+
+.faq__icon--minus {
+}
+
+.faq__element-content {
+  padding: 0 10px;
+  transition: height .25s ease, opacity .25s ease, padding 0s ease;
+}
+
+.faq__picture {
+  display: none;
+
+  @include for-size($desktop-large-min) {
+    display: block;
+  }
+}

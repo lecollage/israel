@@ -8,3 +8,4 @@ import '../styles/want-to-go.scss';
 import '../styles/how-to-go.scss';
 import '../styles/life-in-israel.scss';
 import '../styles/masaisrael.scss';
+import '../styles/faq.scss';
