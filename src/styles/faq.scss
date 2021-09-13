@@ -2,57 +2,104 @@
 
 .faq {
   margin-top: 110px;
-
-  input[type="radio"] {
-    display: none;
-  }
-}
-
-.faq__wrapper {
-  display: flex;
-  flex-direction: row;
-}
-
-.faq__accordeon-wrapper {
-  margin: 0 50px;
+  background: url('../img/faq_bag.webp') left bottom no-repeat;
 
   @include for-size($desktop-large-min) {
-    margin: 0 50px 0 110px;
+    background: url('../img/faq_bag.webp') left bottom no-repeat,
+    url('../img/faq_bg.webp') left top no-repeat;
   }
 
   @include for-size($mobile) {
-    margin: 0 20px;
+    margin-top: 10px;
   }
 
-  & ol {
-    counter-reset: faq;
-    list-style: none;
+  &__header {
+    @include for-size($mobile) {
+      text-align: center;
+      line-height: 40px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__accordeon-wrapper {
+    margin: 0 50px;
+
+    @include for-size($desktop-large-min) {
+      margin: 0 50px 0 110px;
+    }
 
     @include for-size($mobile) {
-      padding-left: 0;
+      margin: 0 20px;
     }
 
-    & li {
-      position: relative;
-      counter-increment: faq;
+    & ol {
+      counter-reset: faq;
+      list-style: none;
+
+      @include for-size($mobile) {
+        padding-left: 0;
+      }
+
+      & li {
+        position: relative;
+        counter-increment: faq;
+      }
     }
   }
-}
 
-.faq__accordeon {
-  counter-reset: counter;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  &__accordeon {
+    counter-reset: counter;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-  i {
+  &__element {
+    min-height: 72px;
+    border-bottom: 1px solid $color-light-gray;
+  }
+
+  &__element-input {
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    margin: 0;
+
+    &:checked {
+      & ~ p {
+        margin: 0;
+        max-height: 0;
+        opacity: 0;
+        transform: translate(0,50%);
+      }
+
+      & ~ .faq__element-control {
+        &:before {
+          transform: translate(4px,0) rotate(45deg)
+        }
+        &:after {
+          transform: translate(-3px,0) rotate(-45deg)
+        }
+      }
+    }
+  }
+
+  &__element-control {
     position: absolute;
     transform: translate(-6px,0);
     padding-right: 36px;
     padding-top: 50px;
     right: 0;
 
-    &:before , &:after {
+    &:before,
+    &:after {
       content: "";
       position: absolute;
       width: 3px;
@@ -67,91 +114,50 @@
     &:after {
       transform: translate(4px, 0) rotate(-45deg)
     }
-  }
 
-  input[type=checkbox] {
-    position: absolute;
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    opacity: 0;
-    margin: 0;
-
-    &:checked {
-      &~p {
-        margin: 0;
-        max-height: 0;
-        opacity: 0;
-        transform: translate(0,50%);
-      }
-
-      &~i {
-        &:before {
-          transform: translate(4px,0) rotate(45deg)
-        }
-        &:after {
-          transform: translate(-3px,0) rotate(-45deg)
-        }
-      }
+    @include for-size($mobile) {
+      padding-right: 6px;
     }
   }
-}
 
-.faq__element {
-  min-height: 72px;
-  border-bottom: 1px solid $color-light-gray;
-}
-
-.faq__element-counter {
-  &::before {
-    position: absolute;
-    z-index: 2;
-    transform: translateY(40px);
-    content: counter(faq);
-    color: $color-yellow;
-    background: linear-gradient(108.42deg, #FFC341 20.46%, #FFD701 65.31%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: $font-size-h3;
-    font-weight: 700;
+  &__element-counter {
+    &:before {
+      position: absolute;
+      z-index: 2;
+      transform: translateY(40px);
+      content: counter(faq);
+      color: $color-yellow;
+      background: linear-gradient(108.42deg, #FFC341 20.46%, #FFD701 65.31%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: $font-size-h3;
+      font-weight: 700;
+    }
   }
-}
 
-.faq__element-header {
-  font-size: $font-size-regular-m;
-  font-weight: initial;
-  margin: 0;
-  padding: 40px 60px 25px 25px;
-  text-align: left;
-}
-
-.faq__element-title--open {
-}
-
-.faq__icon {
-}
-
-.faq__icon--plus {
-}
-
-.faq__element-title--close {
-}
-
-.faq__icon--minus {
-}
-
-.faq__element-content {
-  padding: 0 10px;
-  transition: height .25s ease, opacity .25s ease, padding 0s ease;
-  font-size: $font-size-regular-m;
-  color: $color-gray-3;
-}
-
-.faq__picture {
-  display: none;
-
-  @include for-size($desktop-large-min) {
-    display: block;
+  &__element-header {
+    font-size: $font-size-regular-m;
+    font-weight: initial;
+    margin: 0;
+    padding: 40px 60px 30px 25px;
+    text-align: left;
   }
+
+  &__element-content {
+    padding: 0 10px;
+    margin: 0 0 30px 0;
+    transition: height .25s ease, opacity .25s ease, padding 0s ease;
+    font-size: $font-size-regular-m;
+    color: $color-gray-3;
+  }
+
+  &__picture {
+    display: none;
+
+    @include for-size($desktop-large-min) {
+      display: block;
+    }
+  }
+
 }
+
